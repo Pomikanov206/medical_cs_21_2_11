@@ -8,6 +8,11 @@
     <p th:text="'ID пацієнта:  ' + ${patient.id} + '!'" />
     <p th:text="'ПІБ:  ' + ${patient.name} + '!'" />
     <p th:text="'Телефон пацієнта:  ' + ${patient.phone} + '!'" />
+    <p th:each="disease: ${patient.diseases}">
+        <span th:text="${disease.title}"/>
+        <span th:text="${disease.description}"/>
+    </p>
+    <a th:href="@{/add-disease(id=${patient.id})}">Додати хворобу</a>
     <p/>
     <a href="/patients">До списку</a>
 </body>
